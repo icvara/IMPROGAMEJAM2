@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://imjepunv7ehx"]
+[gd_scene load_steps=8 format=3 uid="uid://imjepunv7ehx"]
 
 [ext_resource type="Texture2D" uid="uid://dsiralhdika6a" path="res://Assets/char_spritesheet.png" id="1_5vmc2"]
+[ext_resource type="Script" uid="uid://cc614thpweesf" path="res://Scenes/palyer.gd" id="1_s28s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s28s5"]
 atlas = ExtResource("1_5vmc2")
@@ -44,6 +45,7 @@ animations = [{
 }]
 
 [node name="Palyer" type="Node2D"]
+script = ExtResource("1_s28s5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gvmcf")

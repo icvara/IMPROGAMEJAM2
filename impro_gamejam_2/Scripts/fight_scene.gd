@@ -1,4 +1,5 @@
 extends Control
+var monster_turn= false
 
 
 func _ready():
@@ -133,12 +134,29 @@ func DiceButtonPressed (Dicename):
 	var dicesizevalue = Dicename.size()
 	var random_element = randi_range(1,dicesizevalue)
 	var rng_effect = Dicename [str(random_element)]
-	$EnemyHP.value -= rng_effect
+	$Monster1.HP -= rng_effect
 	$Dice_roll.get_node("AnimatedSprite2D").play("roll")
 	$dice_result.text = str(rng_effect)
+	$BoxContainer.hide()
+	monster_turn= true
+	$Monster1.attack($Palyer)
+	await get_tree().create_timer(1).timeout
+	monster_turn= false
+	$BoxContainer.show()
 	#$BoxContainer/Dice_result.text = str(rng_effect)
 
 
+func _process(delta: float) -> void:
+	$EnemyHP.value = $Monster1.HP 
+	$PlayerHP.value = $Palyer.HP 
+	$hp_monster_value.text = str($Monster1.HP )
+	$hp_player_value.text = str($Palyer.HP )
+	if $Monster1.HP  <= 0:
+		Win()
+
+
+func Win():
+	pass
 
 func _on_reward_1_button_down() -> void:
 	var random_numbers = [1,1,1,1,1,3]

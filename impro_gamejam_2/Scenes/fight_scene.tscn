@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_l3x7y")
 
 [node name="dice_result" type="Label" parent="."]
+layout_mode = 0
 offset_left = 415.0
 offset_top = 327.0
 offset_right = 455.0
@@ -143,7 +144,7 @@ offset_bottom = 201.0
 theme_override_font_sizes/font_size = 40
 text = "HP"
 
-[node name="Label2" type="Label" parent="."]
+[node name="hp_monster_value" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1031.0
 offset_top = 326.0
@@ -172,7 +173,7 @@ offset_bottom = 229.0
 theme_override_font_sizes/font_size = 40
 text = "HP"
 
-[node name="Label4" type="Label" parent="."]
+[node name="hp_player_value" type="Label" parent="."]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 349.0

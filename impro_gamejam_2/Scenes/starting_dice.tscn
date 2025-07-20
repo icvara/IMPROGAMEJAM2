@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c64usd7cqt4fh"]
 
 [ext_resource type="Script" uid="uid://bk2q06jh7f1nq" path="res://Scripts/starting_dice.gd" id="1_y3ha7"]
-[ext_resource type="PackedScene" path="res://Scenes/dice_roll.tscn" id="2_ndjfd"]
+[ext_resource type="PackedScene" uid="uid://bcco7h46tyaqj" path="res://Scenes/dice_roll.tscn" id="2_ndjfd"]
 
 [node name="StartingDice" type="Control"]
 layout_mode = 3
