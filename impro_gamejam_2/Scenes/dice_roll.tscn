@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcco7h46tyaqj"]
+[gd_scene load_steps=9 format=3 uid="uid://bcco7h46tyaqj"]
 
 [ext_resource type="Texture2D" uid="uid://7ufk60k1qm3y" path="res://Assets/dice_sheet.png" id="1_q4c28"]
 
@@ -22,6 +22,10 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_q4c28")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4yju"]
+atlas = ExtResource("1_q4c28")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u4yju"]
 animations = [{
 "frames": [{
@@ -44,8 +48,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_14282")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4yju")
 }],
-"loop": true,
+"loop": false,
 "name": &"roll",
 "speed": 10.0
 }]
@@ -54,3 +61,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u4yju")
+animation = &"roll"
+autoplay = "roll"
