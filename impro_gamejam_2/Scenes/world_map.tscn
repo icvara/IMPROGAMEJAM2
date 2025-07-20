@@ -109,55 +109,62 @@ visible = false
 layout_mode = 2
 texture = ExtResource("2_b7gke")
 
-[node name="Event1-1" type="Button" parent="."]
+[node name="0" type="Button" parent="."]
 layout_mode = 0
 offset_left = 713.0
 offset_top = 480.0
 offset_right = 788.0
 offset_bottom = 511.0
-text = "Event1-1"
+text = "0"
 
-[node name="Event2-1" type="Button" parent="."]
-visible = false
+[node name="00" type="Button" parent="."]
 layout_mode = 0
-offset_left = 779.0
-offset_top = 353.0
-offset_right = 854.0
-offset_bottom = 384.0
-text = "Event2-1"
-
-[node name="Event2-2" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 527.0
+offset_left = 524.0
 offset_top = 352.0
-offset_right = 602.0
+offset_right = 599.0
 offset_bottom = 383.0
-text = "Event2-2"
+text = "00"
 
-[node name="Event3-1" type="Button" parent="."]
-visible = false
+[node name="01" type="Button" parent="."]
 layout_mode = 0
-offset_left = 781.0
+offset_left = 780.0
+offset_top = 354.0
+offset_right = 855.0
+offset_bottom = 385.0
+text = "01
+"
+
+[node name="000" type="Button" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 259.0
+offset_right = 601.0
+offset_bottom = 290.0
+text = "000
+"
+
+[node name="010" type="Button" parent="."]
+layout_mode = 0
+offset_left = 776.0
 offset_top = 257.0
-offset_right = 856.0
+offset_right = 851.0
 offset_bottom = 288.0
-text = "Event3-1"
+text = "010"
 
-[node name="Event4-1" type="Button" parent="."]
-visible = false
+[node name="011" type="Button" parent="."]
 layout_mode = 0
-offset_left = 711.0
-offset_top = 63.0
-offset_right = 786.0
-offset_bottom = 94.0
-text = "Event4-1"
+offset_left = 709.0
+offset_top = 65.0
+offset_right = 784.0
+offset_bottom = 96.0
+text = "010"
 
 [node name="Palyer" parent="." instance=ExtResource("4_g8h5j")]
 position = Vector2(688, 616)
 
-[connection signal="pressed" from="Event1-1" to="." method="_on_event_11_pressed"]
-[connection signal="pressed" from="Event2-1" to="." method="_on_event_21_pressed"]
-[connection signal="pressed" from="Event2-2" to="." method="_on_event_22_pressed"]
-[connection signal="pressed" from="Event3-1" to="." method="_on_event_31_pressed"]
-[connection signal="pressed" from="Event4-1" to="." method="_on_event_41_pressed"]
+[connection signal="pressed" from="0" to="." method="_on_event_11_pressed"]
+[connection signal="pressed" from="00" to="." method="_on_event_21_pressed"]
+[connection signal="pressed" from="01" to="." method="_on_event_22_pressed"]
+[connection signal="pressed" from="000" to="." method="_on_event_31_pressed"]
+[connection signal="pressed" from="010" to="." method="_on_event_41_pressed"]
+[connection signal="pressed" from="011" to="." method="_on_event_41_pressed"]
