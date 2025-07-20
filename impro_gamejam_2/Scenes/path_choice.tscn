@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsawis6clt7ks"]
+
+[ext_resource type="Script" uid="uid://dymj4xxt2008v" path="res://Scripts/path_choice.gd" id="1_alg4u"]
+
+[node name="Path_choice" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1068.0
+offset_bottom = -617.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEST"
+script = ExtResource("1_alg4u")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

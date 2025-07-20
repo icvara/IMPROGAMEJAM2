@@ -44,3 +44,11 @@ var dice3={
 	"7":7,
 	"8":8
 }
+
+
+
+
+
+var player_position 
+var path 
+var current_path = ""
