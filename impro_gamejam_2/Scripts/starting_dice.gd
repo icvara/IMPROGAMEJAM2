@@ -34,21 +34,21 @@ func _ready():
 		"+str(Save.dice3)
 
 func _on_dice_1_button_down() -> void:
-	Save.dice2 = false
-	Save.dice3 = false
+	Save.dice2 = {}
+	Save.dice3 = {}
 	print(Save.dice1)
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 
 func _on_dice_2_button_down() -> void:
-	Save.dice1 = false
-	Save.dice3 = false
+	Save.dice1 = {}
+	Save.dice3 = {}
 	print(Save.dice2)
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 
 func _on_dice_3_button_down() -> void:
-	Save.dice1 = false
-	Save.dice2 = false
+	Save.dice1 = {}
+	Save.dice2 = {}
 	print(Save.dice3)
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")

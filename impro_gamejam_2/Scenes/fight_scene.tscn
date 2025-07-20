@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://fofk1s7s4a4i"]
+
+[ext_resource type="Script" uid="uid://dwu2rohufpk4o" path="res://Scripts/fight_scene.gd" id="1_l3x7y"]
+
+[node name="FightScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l3x7y")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 394.0
+offset_bottom = 61.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+text = "Choose your dice throw ->"
+
+[node name="Dice1" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice2" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice3" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice4" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice5" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice6" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice7" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice8" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice9" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice10" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice11" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice12" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice13" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice14" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice15" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice16" type="Button" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="Dice_result" type="Label" parent="BoxContainer"]
+layout_mode = 2
+
+[connection signal="button_down" from="BoxContainer/Dice1" to="." method="_on_dice_1_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice2" to="." method="_on_dice_2_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice3" to="." method="_on_dice_3_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice4" to="." method="_on_dice_4_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice5" to="." method="_on_dice_5_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice6" to="." method="_on_dice_6_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice7" to="." method="_on_dice_7_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice8" to="." method="_on_dice_8_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice9" to="." method="_on_dice_9_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice10" to="." method="_on_dice_10_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice11" to="." method="_on_dice_11_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice12" to="." method="_on_dice_12_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice13" to="." method="_on_dice_13_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice14" to="." method="_on_dice_14_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice15" to="." method="_on_dice_15_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice16" to="." method="_on_dice_16_button_down"]
