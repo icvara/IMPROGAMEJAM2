@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://imjepunv7ehx"]
+[gd_scene load_steps=7 format=3 uid="uid://imjepunv7ehx"]
 
 [ext_resource type="Texture2D" uid="uid://dsiralhdika6a" path="res://Assets/char_spritesheet.png" id="1_5vmc2"]
 
@@ -13,6 +13,10 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3yhpe"]
 atlas = ExtResource("1_5vmc2")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vmc2"]
+atlas = ExtResource("1_5vmc2")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvmcf"]
 animations = [{
@@ -29,10 +33,19 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vmc2")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
 }]
 
 [node name="Palyer" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gvmcf")
+animation = &"stop"
 autoplay = "default"

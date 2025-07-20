@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://fofk1s7s4a4i"]
+[gd_scene load_steps=5 format=3 uid="uid://fofk1s7s4a4i"]
 
 [ext_resource type="Script" uid="uid://dwu2rohufpk4o" path="res://Scripts/fight_scene.gd" id="1_l3x7y"]
+[ext_resource type="PackedScene" uid="uid://bcco7h46tyaqj" path="res://Scenes/dice_roll.tscn" id="2_78axv"]
+[ext_resource type="PackedScene" uid="uid://wx41m118lbqo" path="res://Scenes/monster_1.tscn" id="2_x4t7m"]
+[ext_resource type="PackedScene" uid="uid://imjepunv7ehx" path="res://Scenes/palyer.tscn" id="4_11mp3"]
 
 [node name="FightScene" type="Control"]
 layout_mode = 3
@@ -11,14 +14,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l3x7y")
 
+[node name="Dice_roll" parent="." instance=ExtResource("2_78axv")]
+position = Vector2(420, 408)
+scale = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="Dice_roll"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 394.0
-offset_bottom = 61.0
+offset_left = 56.0
+offset_top = 202.0
+offset_right = 455.0
+offset_bottom = 283.0
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="BoxContainer"]
@@ -77,16 +89,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="BoxContainer2" type="BoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -459.0
-offset_top = -144.0
-offset_right = -308.0
-offset_bottom = -104.0
+offset_left = -52.0
+offset_top = 249.0
+offset_right = 123.0
+offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -102,6 +115,70 @@ layout_mode = 2
 
 [node name="Reward3" type="Button" parent="BoxContainer2"]
 layout_mode = 2
+
+[node name="Monster1" parent="." instance=ExtResource("2_x4t7m")]
+position = Vector2(816, 338)
+scale = Vector2(10, 10)
+
+[node name="EnemyHP" type="ProgressBar" parent="."]
+modulate = Color(0.99383, 0, 0.20946, 1)
+layout_mode = 0
+offset_left = 985.0
+offset_top = 199.0
+offset_right = 1021.0
+offset_bottom = 471.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 146.0
+offset_right = 1028.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 40
+text = "HP"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 326.0
+offset_right = 1117.0
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 30
+text = "10000"
+
+[node name="PlayerHP" type="ProgressBar" parent="."]
+modulate = Color(0.99383, 0, 0.20946, 1)
+layout_mode = 0
+offset_left = 105.0
+offset_top = 227.0
+offset_right = 141.0
+offset_bottom = 499.0
+value = 100.0
+show_percentage = false
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 174.0
+offset_right = 148.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 40
+text = "HP"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 349.0
+offset_right = 95.0
+offset_bottom = 391.0
+theme_override_font_sizes/font_size = 30
+text = "10000"
+
+[node name="Palyer" parent="." instance=ExtResource("4_11mp3")]
+position = Vector2(270, 338)
+scale = Vector2(8, 8)
 
 [connection signal="button_down" from="BoxContainer/Dice1" to="." method="_on_dice_1_button_down"]
 [connection signal="button_down" from="BoxContainer/Dice2" to="." method="_on_dice_2_button_down"]

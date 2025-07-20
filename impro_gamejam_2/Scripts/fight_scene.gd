@@ -40,6 +40,11 @@ func _ready():
 	dice_check($BoxContainer/Dice14)
 	dice_check($BoxContainer/Dice15)
 	dice_check($BoxContainer/Dice16)
+	
+	
+	$Palyer.get_node("AnimatedSprite2D").play("stop")
+	$Monster1.get_node("AnimatedSprite2D").play("default")
+
 
 func DiceButtonText (Dicename,BoxButtonNumber):
 	var dicesizevalue = Dicename.size()
@@ -128,7 +133,10 @@ func DiceButtonPressed (Dicename):
 	var dicesizevalue = Dicename.size()
 	var random_element = randi_range(1,dicesizevalue)
 	var rng_effect = Dicename [str(random_element)]
-	$BoxContainer/Dice_result.text = str(rng_effect)
+	$EnemyHP.value -= rng_effect
+	$Dice_roll.get_node("AnimatedSprite2D").play("roll")
+	$Dice_roll/Label.text = str(rng_effect)
+	#$BoxContainer/Dice_result.text = str(rng_effect)
 
 
 

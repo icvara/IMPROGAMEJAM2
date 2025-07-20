@@ -86,4 +86,3 @@ script = ExtResource("1_b4ofe")
 sprite_frames = SubResource("SpriteFrames_7ko5y")
 animation = &"attack"
 autoplay = "attack"
-frame_progress = 0.648957
