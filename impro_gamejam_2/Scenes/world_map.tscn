@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://wj82vnrhk3qm"]
+
+[ext_resource type="Script" uid="uid://c1hti13e7ql6k" path="res://Scripts/world_map.gd" id="1_rvr0e"]
+[ext_resource type="Texture2D" uid="uid://cn6ur2s2qw23d" path="res://Assets/asset temporaire+.png" id="2_b7gke"]
+
+[node name="WorldMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rvr0e")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_b7gke")
+
+[node name="Event1-1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 571.0
+offset_right = 833.0
+offset_bottom = 602.0
+text = "Event1-1"
+
+[node name="Event2-1" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 681.0
+offset_top = 465.0
+offset_right = 756.0
+offset_bottom = 496.0
+text = "Event2-1"
+
+[node name="Event2-2" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 861.0
+offset_top = 482.0
+offset_right = 936.0
+offset_bottom = 513.0
+text = "Event2-2"
+
+[node name="Event3-1" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 769.0
+offset_top = 373.0
+offset_right = 844.0
+offset_bottom = 404.0
+text = "Event3-1"
+
+[node name="Event4-1" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 779.0
+offset_top = 245.0
+offset_right = 854.0
+offset_bottom = 276.0
+text = "Event4-1"

@@ -1,0 +1,18 @@
+extends Control
+
+
+func _on_dice_1_button_down() -> void:
+	save_to_file(dice1)
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
+
+
+func _on_dice_2_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
+
+
+func _on_dice_3_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
+
+func save_to_file(content):
+		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
+		file.store_string(content)

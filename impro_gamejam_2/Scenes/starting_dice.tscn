@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://c64usd7cqt4fh"]
+
+[ext_resource type="Script" uid="uid://bk2q06jh7f1nq" path="res://Scripts/starting_dice.gd" id="1_y3ha7"]
+
+[node name="StartingDice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y3ha7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Choose" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 118.0
+offset_right = 20.0
+offset_bottom = 141.0
+grow_horizontal = 2
+text = "Choose your starting dice!"
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -112.0
+offset_right = 80.5
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dice1" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Dice1"
+
+[node name="Dice2" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Dice2"
+
+[node name="Dice3" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Dice3"
+
+[connection signal="button_down" from="BoxContainer/Dice1" to="." method="_on_dice_1_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice2" to="." method="_on_dice_2_button_down"]
+[connection signal="button_down" from="BoxContainer/Dice3" to="." method="_on_dice_3_button_down"]
