@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c64usd7cqt4fh"]
+[gd_scene load_steps=3 format=3 uid="uid://c64usd7cqt4fh"]
 
 [ext_resource type="Script" uid="uid://bk2q06jh7f1nq" path="res://Scripts/starting_dice.gd" id="1_y3ha7"]
+[ext_resource type="PackedScene" uid="uid://bcco7h46tyaqj" path="res://Scenes/dice_roll.tscn" id="2_ndjfd"]
 
 [node name="StartingDice" type="Control"]
 layout_mode = 3
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y3ha7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.375, 0.377083, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,6 +39,7 @@ offset_top = 118.0
 offset_right = 20.0
 offset_bottom = 141.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
 text = "Choose your starting dice!"
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
@@ -38,12 +49,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
-offset_top = -112.0
-offset_right = 80.5
-offset_bottom = -72.0
+offset_left = -199.5
+offset_top = -49.0
+offset_right = 199.5
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 80
+
+[node name="Dice_roll" parent="BoxContainer" instance=ExtResource("2_ndjfd")]
+modulate = Color(0.44, 0.533333, 1, 1)
+position = Vector2(23.5, -32)
+scale = Vector2(2, 2)
+
+[node name="Dice_roll2" parent="BoxContainer" instance=ExtResource("2_ndjfd")]
+modulate = Color(0.39, 1, 0.522167, 1)
+position = Vector2(224.5, -36)
+scale = Vector2(2, 2)
+
+[node name="Dice_roll3" parent="BoxContainer" instance=ExtResource("2_ndjfd")]
+modulate = Color(0.83473, 0.363967, 0.483191, 1)
+position = Vector2(441.5, -40)
+scale = Vector2(2, 2)
 
 [node name="Dice1" type="Button" parent="BoxContainer"]
 layout_mode = 2
