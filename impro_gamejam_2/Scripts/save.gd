@@ -51,4 +51,4 @@ var dice3={
 
 var player_position 
 var path 
-var current_path =0
+var current_path = ""

@@ -12,6 +12,5 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	Save.current_path = 20
-	
+	#Save.current_path = "0"
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")

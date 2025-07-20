@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://wj82vnrhk3qm"]
+[gd_scene load_steps=8 format=4 uid="uid://wj82vnrhk3qm"]
 
 [ext_resource type="Script" uid="uid://c1hti13e7ql6k" path="res://Scripts/world_map.gd" id="1_rvr0e"]
 [ext_resource type="Texture2D" uid="uid://cn6ur2s2qw23d" path="res://Assets/asset temporaire+.png" id="2_b7gke"]
 [ext_resource type="Texture2D" uid="uid://bv0wxkqjhulgc" path="res://Assets/Path_tileset.png" id="2_llh6y"]
+[ext_resource type="PackedScene" uid="uid://dsawis6clt7ks" path="res://Scenes/path_choice.tscn" id="3_67byq"]
 [ext_resource type="PackedScene" uid="uid://imjepunv7ehx" path="res://Scenes/palyer.tscn" id="4_g8h5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8h5j"]
@@ -98,6 +99,49 @@ tile_set = SubResource("TileSet_67byq")
 tile_map_data = PackedByteArray("AAATAAgAAAADAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAADAAAAAAATAAwAAAAAAAMAAAAVAAUAAAACAAEAAAAVAA8AAAADAAAAAAAVABAAAAAAAAAAAAAXAAgAAAAFAAAAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAADAAAAAAAXAAwAAAABAAMAAAATAAUAAAAAAAIAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAUAAAAAAAEAAAAUAAwAAAAAAAEAAAAVAAIAAAAGAAAAAAAVAAMAAAAAAAAAAAAVAAQAAAAAAAAAAAAVAAwAAAABAAAAAAAVAA0AAAAAAAAAAAAVAA4AAAAAAAAAAAAWAAUAAAAAAAEAAAAWAAwAAAAAAAEAAAAXAAUAAAABAAIAAAAXAAYAAAAAAAAAAAAXAAcAAAAAAAAAAAAVABEAAAAAAAAAAAAVABIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_67byq")
 
+[node name="Path" type="Node2D" parent="."]
+
+[node name="Path_choice" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 710.0
+offset_top = 478.0
+offset_right = 754.0
+offset_bottom = 509.0
+new_path = "0"
+
+[node name="Path_choice2" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 778.0
+offset_top = 354.0
+offset_right = 822.0
+offset_bottom = 385.0
+new_path = "01"
+
+[node name="Path_choice3" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 558.0
+offset_top = 354.0
+offset_right = 602.0
+offset_bottom = 385.0
+new_path = "00"
+
+[node name="Path_choice4" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 558.0
+offset_top = 256.0
+offset_right = 602.0
+offset_bottom = 287.0
+
+[node name="Path_choice5" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 775.0
+offset_top = 256.0
+offset_right = 819.0
+offset_bottom = 287.0
+new_path = "010"
+
+[node name="Path_choice6" parent="Path" instance=ExtResource("3_67byq")]
+offset_left = 714.0
+offset_top = 61.0
+offset_right = 758.0
+offset_bottom = 92.0
+new_path = "0X00"
+
 [node name="BoxContainer" type="BoxContainer" parent="."]
 visible = false
 layout_mode = 0
@@ -109,62 +153,5 @@ visible = false
 layout_mode = 2
 texture = ExtResource("2_b7gke")
 
-[node name="0" type="Button" parent="."]
-layout_mode = 0
-offset_left = 713.0
-offset_top = 480.0
-offset_right = 788.0
-offset_bottom = 511.0
-text = "0"
-
-[node name="00" type="Button" parent="."]
-layout_mode = 0
-offset_left = 524.0
-offset_top = 352.0
-offset_right = 599.0
-offset_bottom = 383.0
-text = "00"
-
-[node name="01" type="Button" parent="."]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 354.0
-offset_right = 855.0
-offset_bottom = 385.0
-text = "01
-"
-
-[node name="000" type="Button" parent="."]
-layout_mode = 0
-offset_left = 526.0
-offset_top = 259.0
-offset_right = 601.0
-offset_bottom = 290.0
-text = "000
-"
-
-[node name="010" type="Button" parent="."]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 257.0
-offset_right = 851.0
-offset_bottom = 288.0
-text = "010"
-
-[node name="011" type="Button" parent="."]
-layout_mode = 0
-offset_left = 709.0
-offset_top = 65.0
-offset_right = 784.0
-offset_bottom = 96.0
-text = "010"
-
 [node name="Palyer" parent="." instance=ExtResource("4_g8h5j")]
 position = Vector2(688, 616)
-
-[connection signal="pressed" from="0" to="." method="_on_event_11_pressed"]
-[connection signal="pressed" from="00" to="." method="_on_event_21_pressed"]
-[connection signal="pressed" from="01" to="." method="_on_event_22_pressed"]
-[connection signal="pressed" from="000" to="." method="_on_event_31_pressed"]
-[connection signal="pressed" from="010" to="." method="_on_event_41_pressed"]
-[connection signal="pressed" from="011" to="." method="_on_event_41_pressed"]
