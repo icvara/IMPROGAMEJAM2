@@ -101,7 +101,7 @@ func _on_dice_16_button_down() -> void:
 	
 func DiceButtonPressed (Dicename):
 	var dicesizevalue = Dicename.size()
-	var random_element = randi_range(1,dicesizevalue)
+	var random_element = randi_range(0,dicesizevalue-1)
 	print(Dicename)
 	var rng_effect = Dicename [str(random_element)]
 	$Monster1.HP -= rng_effect

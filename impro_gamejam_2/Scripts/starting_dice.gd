@@ -3,28 +3,28 @@ extends Control
 
 func _ready():
 	Save.dice1 ={
+	"0":randi_range(1, 4),
 	"1":randi_range(1, 4),
 	"2":randi_range(1, 4),
-	"3":randi_range(1, 4),
-	"4":randi_range(4, 10),
+	"3":randi_range(4, 10),
 }
 	Save.dice2 ={
-	"1":randi_range(1, 1),
-	"2":randi_range(2, 2),
-	"3":randi_range(3, 3),
-	"4":randi_range(4, 4),
-	"5":randi_range(5, 5),
-	"6":randi_range(6, 6),
+	"0":randi_range(1, 1),
+	"1":randi_range(2, 2),
+	"2":randi_range(3, 3),
+	"3":randi_range(4, 4),
+	"4":randi_range(5, 5),
+	"5":randi_range(6, 6),
 }
 	Save.dice3 ={
+	"0":randi_range(1, 2),
 	"1":randi_range(1, 2),
-	"2":randi_range(1, 2),
+	"2":randi_range(1, 4),
 	"3":randi_range(1, 4),
-	"4":randi_range(1, 4),
+	"4":randi_range(2, 6),
 	"5":randi_range(2, 6),
-	"6":randi_range(2, 6),
+	"6":randi_range(3, 8),
 	"7":randi_range(3, 8),
-	"8":randi_range(3, 8),
 }
 	$BoxContainer/Dice1.text = "dice1 :
 		"+str(Save.dice1.values())
