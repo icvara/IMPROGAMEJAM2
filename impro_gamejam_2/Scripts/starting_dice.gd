@@ -27,11 +27,11 @@ func _ready():
 	"8":randi_range(3, 8),
 }
 	$BoxContainer/Dice1.text = "dice1 :
-		"+str(Save.dice1)
+		"+str(Save.dice1.values())
 	$BoxContainer/Dice2.text = "dice2 :
-		"+str(Save.dice2)
+		"+str(Save.dice2.values())
 	$BoxContainer/Dice3.text = "dice3 :
-		"+str(Save.dice3)
+		"+str(Save.dice3.values())
 
 func _on_dice_1_button_down() -> void:
 	Save.dice2 = {}
