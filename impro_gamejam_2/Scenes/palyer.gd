@@ -1,4 +1,4 @@
 extends Node2D
 
 
-var HP = 100
+var HP = 10

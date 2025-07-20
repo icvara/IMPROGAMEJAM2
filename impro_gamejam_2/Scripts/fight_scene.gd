@@ -43,6 +43,9 @@ func _ready():
 	dice_check($BoxContainer/Dice16)
 	
 	
+	$EnemyHP.max_value = $Monster1.HP
+	$PlayerHP.max_value = Save.MaxHealth
+	
 	$Palyer.get_node("AnimatedSprite2D").play("stop")
 	$Monster1.get_node("AnimatedSprite2D").play("default")
 
@@ -148,21 +151,25 @@ func DiceButtonPressed (Dicename):
 
 func _process(delta: float) -> void:
 	$EnemyHP.value = $Monster1.HP 
-	$PlayerHP.value = $Palyer.HP 
+	$PlayerHP.value = Save.Health 
 	$hp_monster_value.text = str($Monster1.HP )
-	$hp_player_value.text = str($Palyer.HP )
+	$hp_player_value.text = str(Save.Health)
 	if $Monster1.HP  <= 0:
 		Win()
 
 
 func Win():
 	pass
+	$Panel.show()
+	$BoxContainer2.show()
+	#get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 func _on_reward_1_button_down() -> void:
 	var random_numbers = [1,1,1,1,1,3]
 	var random_index =randi_range(0, random_numbers.size()-1)
 	var random = random_numbers[random_index]
 	reward_generation(Save.dice4,random,$BoxContainer2/Reward1)
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 
 func _on_reward_2_button_down() -> void:
@@ -170,6 +177,7 @@ func _on_reward_2_button_down() -> void:
 	var random_index =randi_range(0, random_numbers.size()-1)
 	var random = random_numbers[random_index]
 	reward_generation(Save.dice5,random,$BoxContainer2/Reward2)
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 
 func _on_reward_3_button_down() -> void:
@@ -177,3 +185,4 @@ func _on_reward_3_button_down() -> void:
 	var random_index =randi_range(0, random_numbers.size()-1)
 	var random = random_numbers[random_index]
 	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
