@@ -3,7 +3,7 @@ var monster_turn= false
 var somtehing =false
 
 func _ready():
-	print(Save.dice4)
+
 	DiceButtonText(Save.dice1,$BoxContainer/Dice1)
 	DiceButtonText(Save.dice2,$BoxContainer/Dice2)
 	DiceButtonText(Save.dice3,$BoxContainer/Dice3)
@@ -61,9 +61,7 @@ func reward_generation(Dicename,Quality,RewardButton):
 	var random = random_numbers[random_index]
 	#Dicename = {}
 	for i in randi_range(4,12):
-		Dicename[i] = randi_range(1,4+Quality)
-		print(Save.dice4)
-	print(str(Dicename.values()))
+		Dicename[str(i)] = randi_range(1,4+Quality)
 	RewardButton.text = (str(Dicename.values()))
 	
 
@@ -104,6 +102,7 @@ func _on_dice_16_button_down() -> void:
 func DiceButtonPressed (Dicename):
 	var dicesizevalue = Dicename.size()
 	var random_element = randi_range(1,dicesizevalue)
+	print(Dicename)
 	var rng_effect = Dicename [str(random_element)]
 	$Monster1.HP -= rng_effect
 	$Dice_roll.get_node("AnimatedSprite2D").play("roll")
