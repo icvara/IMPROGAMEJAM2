@@ -29,4 +29,8 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	Save.current_path = new_path
 	Save.player_position = position
-	get_tree().change_scene_to_file("res://Scenes/fight_scene.tscn")
+	if new_path == "0X00":
+		get_tree().change_scene_to_file("res://Scenes/fightfinal_scene.tscn")
+
+	else:
+		get_tree().change_scene_to_file("res://Scenes/fight_scene.tscn")

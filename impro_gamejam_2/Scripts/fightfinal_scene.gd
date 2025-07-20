@@ -137,9 +137,9 @@ func Win():
 	reward_generation(Save.dice5,1,$BoxContainer2/Reward2)
 	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
 	$Panel.show()
-	$BoxContainer2.show()
+	#$BoxContainer2.show()
+	#$BoxContainer.hide()
 	#get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
-	$BoxContainer.hide()
 
 
 
