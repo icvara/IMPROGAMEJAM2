@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://wj82vnrhk3qm"]
+[gd_scene load_steps=7 format=4 uid="uid://wj82vnrhk3qm"]
 
 [ext_resource type="Script" uid="uid://c1hti13e7ql6k" path="res://Scripts/world_map.gd" id="1_rvr0e"]
 [ext_resource type="Texture2D" uid="uid://cn6ur2s2qw23d" path="res://Assets/asset temporaire+.png" id="2_b7gke"]
 [ext_resource type="Texture2D" uid="uid://bv0wxkqjhulgc" path="res://Assets/Path_tileset.png" id="2_llh6y"]
+[ext_resource type="PackedScene" uid="uid://imjepunv7ehx" path="res://Scenes/palyer.tscn" id="4_g8h5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8h5j"]
 texture = ExtResource("2_llh6y")
@@ -117,6 +118,7 @@ offset_bottom = 511.0
 text = "Event1-1"
 
 [node name="Event2-1" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 779.0
 offset_top = 353.0
@@ -125,6 +127,7 @@ offset_bottom = 384.0
 text = "Event2-1"
 
 [node name="Event2-2" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 527.0
 offset_top = 352.0
@@ -133,6 +136,7 @@ offset_bottom = 383.0
 text = "Event2-2"
 
 [node name="Event3-1" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 781.0
 offset_top = 257.0
@@ -141,9 +145,19 @@ offset_bottom = 288.0
 text = "Event3-1"
 
 [node name="Event4-1" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 711.0
 offset_top = 63.0
 offset_right = 786.0
 offset_bottom = 94.0
 text = "Event4-1"
+
+[node name="Palyer" parent="." instance=ExtResource("4_g8h5j")]
+position = Vector2(688, 616)
+
+[connection signal="pressed" from="Event1-1" to="." method="_on_event_11_pressed"]
+[connection signal="pressed" from="Event2-1" to="." method="_on_event_21_pressed"]
+[connection signal="pressed" from="Event2-2" to="." method="_on_event_22_pressed"]
+[connection signal="pressed" from="Event3-1" to="." method="_on_event_31_pressed"]
+[connection signal="pressed" from="Event4-1" to="." method="_on_event_41_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://imjepunv7ehx"]
+
+[ext_resource type="Texture2D" uid="uid://dsiralhdika6a" path="res://Assets/char_spritesheet.png" id="1_5vmc2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s28s5"]
+atlas = ExtResource("1_5vmc2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx50o"]
+atlas = ExtResource("1_5vmc2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yhpe"]
+atlas = ExtResource("1_5vmc2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvmcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s28s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx50o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yhpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Palyer" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gvmcf")
+autoplay = "default"
