@@ -1,5 +1,5 @@
 extends Node2D
-var HP = 50
+@export var HP = 10
 
 var value_dmg = 0
 
