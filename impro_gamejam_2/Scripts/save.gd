@@ -53,3 +53,10 @@ var dice3={
 var player_position 
 var path 
 var current_path = ""
+
+
+
+func init():
+	Health = 60
+	path = ""
+	current_path = ""
