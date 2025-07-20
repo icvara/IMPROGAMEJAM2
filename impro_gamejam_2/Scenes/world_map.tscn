@@ -22,6 +22,7 @@ layout_mode = 2
 texture = ExtResource("2_b7gke")
 
 [node name="Event1-1" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 758.0
 offset_top = 571.0
