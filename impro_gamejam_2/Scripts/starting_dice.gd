@@ -1,6 +1,38 @@
 extends Control
 
 
+func _ready():
+	Save.dice1 ={
+	"1":randi_range(1, 4),
+	"2":randi_range(1, 4),
+	"3":randi_range(1, 4),
+	"4":randi_range(4, 10),
+}
+	Save.dice2 ={
+	"1":randi_range(1, 1),
+	"2":randi_range(2, 2),
+	"3":randi_range(3, 3),
+	"4":randi_range(4, 4),
+	"5":randi_range(5, 5),
+	"6":randi_range(6, 6),
+}
+	Save.dice3 ={
+	"1":randi_range(1, 2),
+	"2":randi_range(1, 2),
+	"3":randi_range(1, 4),
+	"4":randi_range(1, 4),
+	"5":randi_range(2, 6),
+	"6":randi_range(2, 6),
+	"7":randi_range(3, 8),
+	"8":randi_range(3, 8),
+}
+	$BoxContainer/Dice1.text = "dice1 :
+		"+str(Save.dice1)
+	$BoxContainer/Dice2.text = "dice2 :
+		"+str(Save.dice2)
+	$BoxContainer/Dice3.text = "dice3 :
+		"+str(Save.dice3)
+
 func _on_dice_1_button_down() -> void:
 	Save.dice2 = false
 	Save.dice3 = false
@@ -9,8 +41,14 @@ func _on_dice_1_button_down() -> void:
 
 
 func _on_dice_2_button_down() -> void:
+	Save.dice1 = false
+	Save.dice3 = false
+	print(Save.dice2)
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 
 func _on_dice_3_button_down() -> void:
+	Save.dice1 = false
+	Save.dice2 = false
+	print(Save.dice3)
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")

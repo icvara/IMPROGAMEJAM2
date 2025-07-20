@@ -1,9 +1,22 @@
 extends Node
 
 
-var example = 111
+var Health = 60
+var MaxHealth =60
 
-
+var dice4= false
+var dice5= false
+var dice6= false
+var dice7= false
+var dice8= false
+var dice9= false
+var dice10= false
+var dice11= false
+var dice12= false
+var dice13= false
+var dice14= false
+var dice15= false
+var dice16= false
 
 var dice1 ={
 	"1":1,
