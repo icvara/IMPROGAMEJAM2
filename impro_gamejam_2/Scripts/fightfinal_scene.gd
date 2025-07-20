@@ -101,7 +101,7 @@ func _on_dice_16_button_down() -> void:
 	
 func DiceButtonPressed (Dicename):
 	var dicesizevalue = Dicename.size()
-	var random_element = randi_range(1,dicesizevalue)
+	var random_element = randi_range(1,dicesizevalue-1)
 	print(Dicename)
 	var rng_effect = Dicename [str(random_element)]
 	$Monster1.HP -= rng_effect
@@ -126,7 +126,8 @@ func _process(delta: float) -> void:
 		if somtehing == false:
 			Win()
 			somtehing = true
-
+	if Save.Health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func Win():
 	pass

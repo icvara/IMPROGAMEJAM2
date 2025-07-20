@@ -128,6 +128,9 @@ func _process(delta: float) -> void:
 			somtehing = true
 
 
+	if Save.Health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
 func Win():
 	pass
 	var random_numbers = [1,1,3]
