@@ -135,7 +135,7 @@ func DiceButtonPressed (Dicename):
 	var rng_effect = Dicename [str(random_element)]
 	$EnemyHP.value -= rng_effect
 	$Dice_roll.get_node("AnimatedSprite2D").play("roll")
-	$Dice_roll/Label.text = str(rng_effect)
+	$dice_result.text = str(rng_effect)
 	#$BoxContainer/Dice_result.text = str(rng_effect)
 
 

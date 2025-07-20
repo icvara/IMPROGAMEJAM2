@@ -14,13 +14,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l3x7y")
 
-[node name="Dice_roll" parent="." instance=ExtResource("2_78axv")]
-position = Vector2(420, 408)
-scale = Vector2(5, 5)
+[node name="dice_result" type="Label" parent="."]
+offset_left = 415.0
+offset_top = 327.0
+offset_right = 455.0
+offset_bottom = 350.0
+theme_override_font_sizes/font_size = 30
 
-[node name="Label" type="Label" parent="Dice_roll"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Dice_roll" parent="." instance=ExtResource("2_78axv")]
+position = Vector2(420, 426)
+scale = Vector2(5, 5)
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -128,6 +131,7 @@ offset_top = 199.0
 offset_right = 1021.0
 offset_bottom = 471.0
 value = 100.0
+fill_mode = 3
 show_percentage = false
 
 [node name="Label" type="Label" parent="."]
@@ -156,6 +160,7 @@ offset_top = 227.0
 offset_right = 141.0
 offset_bottom = 499.0
 value = 100.0
+fill_mode = 3
 show_percentage = false
 
 [node name="Label3" type="Label" parent="."]
