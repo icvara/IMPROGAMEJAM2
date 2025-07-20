@@ -1,8 +1,13 @@
 extends Control
 
 
-
 func _ready():
+	var random_numbers = [1,1,1,1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	reward_generation(Save.dice4,random,$BoxContainer2/Reward1)
+	reward_generation(Save.dice5,random,$BoxContainer2/Reward2)
+	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
 	DiceButtonText(Save.dice1,$BoxContainer/Dice1)
 	DiceButtonText(Save.dice2,$BoxContainer/Dice2)
 	DiceButtonText(Save.dice3,$BoxContainer/Dice3)
@@ -45,6 +50,17 @@ func DiceButtonText (Dicename,BoxButtonNumber):
 func dice_check(dicelabel):
 	if dicelabel.text == "[]":
 		dicelabel.hide()
+
+func reward_generation(Dicename,Quality,RewardButton):
+	var random_numbers = [1,1,1,1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	Dicename = {}
+	for i in randi_range(4,12):
+		Dicename[i] = randi_range(1,4+Quality)
+	print(str(Dicename.values()))
+	RewardButton.text = (str(Dicename.values()))
+	
 
 
 func _on_dice_1_button_down() -> void:
@@ -113,3 +129,25 @@ func DiceButtonPressed (Dicename):
 	var random_element = randi_range(1,dicesizevalue)
 	var rng_effect = Dicename [str(random_element)]
 	$BoxContainer/Dice_result.text = str(rng_effect)
+
+
+
+func _on_reward_1_button_down() -> void:
+	var random_numbers = [1,1,1,1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	reward_generation(Save.dice4,random,$BoxContainer2/Reward1)
+
+
+func _on_reward_2_button_down() -> void:
+	var random_numbers = [1,1,1,1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	reward_generation(Save.dice5,random,$BoxContainer2/Reward2)
+
+
+func _on_reward_3_button_down() -> void:
+	var random_numbers = [1,1,1,1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)

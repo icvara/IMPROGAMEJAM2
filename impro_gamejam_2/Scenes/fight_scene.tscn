@@ -76,6 +76,33 @@ layout_mode = 2
 [node name="Dice_result" type="Label" parent="BoxContainer"]
 layout_mode = 2
 
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -144.0
+offset_right = -308.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RewardLabel" type="Label" parent="BoxContainer2"]
+layout_mode = 2
+text = "Choose a reward :"
+
+[node name="Reward1" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+
+[node name="Reward2" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+
+[node name="Reward3" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+
 [connection signal="button_down" from="BoxContainer/Dice1" to="." method="_on_dice_1_button_down"]
 [connection signal="button_down" from="BoxContainer/Dice2" to="." method="_on_dice_2_button_down"]
 [connection signal="button_down" from="BoxContainer/Dice3" to="." method="_on_dice_3_button_down"]
@@ -92,3 +119,6 @@ layout_mode = 2
 [connection signal="button_down" from="BoxContainer/Dice14" to="." method="_on_dice_14_button_down"]
 [connection signal="button_down" from="BoxContainer/Dice15" to="." method="_on_dice_15_button_down"]
 [connection signal="button_down" from="BoxContainer/Dice16" to="." method="_on_dice_16_button_down"]
+[connection signal="button_down" from="BoxContainer2/Reward1" to="." method="_on_reward_1_button_down"]
+[connection signal="button_down" from="BoxContainer2/Reward2" to="." method="_on_reward_2_button_down"]
+[connection signal="button_down" from="BoxContainer2/Reward3" to="." method="_on_reward_3_button_down"]
