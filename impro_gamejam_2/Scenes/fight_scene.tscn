@@ -22,6 +22,14 @@ offset_right = 455.0
 offset_bottom = 350.0
 theme_override_font_sizes/font_size = 30
 
+[node name="dice_result_enemy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 344.0
+offset_right = 680.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 30
+
 [node name="Dice_roll" parent="." instance=ExtResource("2_78axv")]
 position = Vector2(420, 426)
 scale = Vector2(5, 5)

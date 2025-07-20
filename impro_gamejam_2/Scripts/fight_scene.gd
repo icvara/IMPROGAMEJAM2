@@ -144,6 +144,7 @@ func DiceButtonPressed (Dicename):
 	monster_turn= true
 	$Monster1.attack($Palyer)
 	await get_tree().create_timer(1).timeout
+	$dice_result_enemy.text = str($Monster1.value_dmg)
 	monster_turn= false
 	$BoxContainer.show()
 	#$BoxContainer/Dice_result.text = str(rng_effect)
