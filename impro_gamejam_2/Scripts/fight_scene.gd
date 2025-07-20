@@ -67,6 +67,7 @@ func reward_generation(Dicename,Quality,RewardButton):
 	Dicename = {}
 	for i in randi_range(4,12):
 		Dicename[i] = randi_range(1,4+Quality)
+		print(Save.dice4)
 	print(str(Dicename.values()))
 	RewardButton.text = (str(Dicename.values()))
 	
