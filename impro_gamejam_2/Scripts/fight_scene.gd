@@ -1,14 +1,9 @@
 extends Control
 var monster_turn= false
-
+var somtehing =false
 
 func _ready():
-	var random_numbers = [1,1,1,1,1,3]
-	var random_index =randi_range(0, random_numbers.size()-1)
-	var random = random_numbers[random_index]
-	reward_generation(Save.dice4,random,$BoxContainer2/Reward1)
-	reward_generation(Save.dice5,random,$BoxContainer2/Reward2)
-	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
+	print(Save.dice4)
 	DiceButtonText(Save.dice1,$BoxContainer/Dice1)
 	DiceButtonText(Save.dice2,$BoxContainer/Dice2)
 	DiceButtonText(Save.dice3,$BoxContainer/Dice3)
@@ -64,7 +59,7 @@ func reward_generation(Dicename,Quality,RewardButton):
 	var random_numbers = [1,1,1,1,1,3]
 	var random_index =randi_range(0, random_numbers.size()-1)
 	var random = random_numbers[random_index]
-	Dicename = {}
+	#Dicename = {}
 	for i in randi_range(4,12):
 		Dicename[i] = randi_range(1,4+Quality)
 	print(str(Dicename.values()))
@@ -74,62 +69,34 @@ func reward_generation(Dicename,Quality,RewardButton):
 
 func _on_dice_1_button_down() -> void:
 	DiceButtonPressed(Save.dice1)
-
-
 func _on_dice_2_button_down() -> void:
 	DiceButtonPressed(Save.dice2)
-
-
 func _on_dice_3_button_down() -> void:
 	DiceButtonPressed(Save.dice3)
-
-
 func _on_dice_4_button_down() -> void:
 	DiceButtonPressed(Save.dice4)
-
-
 func _on_dice_5_button_down() -> void:
 	DiceButtonPressed(Save.dice5)
-
-
 func _on_dice_6_button_down() -> void:
 	DiceButtonPressed(Save.dice6)
-
-
 func _on_dice_7_button_down() -> void:
 	DiceButtonPressed(Save.dice7)
-
-
 func _on_dice_8_button_down() -> void:
 	DiceButtonPressed(Save.dice8)
-
-
 func _on_dice_9_button_down() -> void:
 	DiceButtonPressed(Save.dice9)
-
-
 func _on_dice_10_button_down() -> void:
 	DiceButtonPressed(Save.dice10)
-
-
 func _on_dice_11_button_down() -> void:
 	DiceButtonPressed(Save.dice11)
-
-
 func _on_dice_12_button_down() -> void:
 	DiceButtonPressed(Save.dice12)
-
-
 func _on_dice_13_button_down() -> void:
 	DiceButtonPressed(Save.dice13)
-
 func _on_dice_14_button_down() -> void:
 	DiceButtonPressed(Save.dice14)
-
 func _on_dice_15_button_down() -> void:
 	DiceButtonPressed(Save.dice15)
-
-
 func _on_dice_16_button_down() -> void:
 	DiceButtonPressed(Save.dice16)
 	
@@ -155,34 +122,36 @@ func _process(delta: float) -> void:
 	$hp_monster_value.text = str($Monster1.HP )
 	$hp_player_value.text = str(Save.Health)
 	if $Monster1.HP  <= 0:
-		Win()
+		if somtehing == false:
+			Win()
+			somtehing = true
 
 
 func Win():
 	pass
+	var random_numbers = [1,1,3]
+	var random_index =randi_range(0, random_numbers.size()-1)
+	var random = random_numbers[random_index]
+	reward_generation(Save.dice4,1,$BoxContainer2/Reward1)
+	reward_generation(Save.dice5,1,$BoxContainer2/Reward2)
+	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
 	$Panel.show()
 	$BoxContainer2.show()
 	#get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
-func _on_reward_1_button_down() -> void:
-	var random_numbers = [1,1,1,1,1,3]
-	var random_index =randi_range(0, random_numbers.size()-1)
-	var random = random_numbers[random_index]
-	reward_generation(Save.dice4,random,$BoxContainer2/Reward1)
-	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
+
+func _on_reward_1_button_down() -> void:
+	Save.dice5 = {}
+	Save.dice6 = {}
+	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
 func _on_reward_2_button_down() -> void:
-	var random_numbers = [1,1,1,1,1,3]
-	var random_index =randi_range(0, random_numbers.size()-1)
-	var random = random_numbers[random_index]
-	reward_generation(Save.dice5,random,$BoxContainer2/Reward2)
+	Save.dice4= {}
+	Save.dice6= {}
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")
 
-
 func _on_reward_3_button_down() -> void:
-	var random_numbers = [1,1,1,1,1,3]
-	var random_index =randi_range(0, random_numbers.size()-1)
-	var random = random_numbers[random_index]
-	reward_generation(Save.dice6,random,$BoxContainer2/Reward3)
+	Save.dice4= {}
+	Save.dice5 = {}
 	get_tree().change_scene_to_file("res://Scenes/world_map.tscn")

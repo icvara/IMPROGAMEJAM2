@@ -4,6 +4,7 @@ extends Node
 var Health = 60
 var MaxHealth =60
 
+var dicenumber = 1
 var dice4={}
 var dice5={}
 var dice6={}
